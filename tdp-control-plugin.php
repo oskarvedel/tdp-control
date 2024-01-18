@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: TDP Control Plugin
+ * Plugin Name: tdp-control
  * Description: Runs daily functions from tdp plugins
  * Version: 1.0
  */
