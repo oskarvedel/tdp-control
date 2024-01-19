@@ -44,6 +44,8 @@ function run_tdp_daily_functions()
     generate_meta_titles();
     sleep(30);
     generate_meta_descriptions();
+    sleep(30);
+    generate_default_unit_list_for_all_gd_places();
     trigger_error('FINISHED RUNNING TDP DAILY FUNCTIONS', E_USER_WARNING);
 }
 add_action('run_tdp_daily_functions', 'run_tdp_daily_functions');
