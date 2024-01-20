@@ -54,7 +54,11 @@ function run_tdp_daily_functions()
 
     //send an email to the admin
     $subject = "TDP Daily Functions just ran";
-    send_email("", $subject);
+    $to = get_option('admin_email'); // Get the admin email
+
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+
+    wp_mail($to, $subject, $body, $headers);
 }
 add_action('run_tdp_daily_functions', 'run_tdp_daily_functions');
 
