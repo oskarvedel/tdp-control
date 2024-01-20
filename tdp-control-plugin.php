@@ -24,6 +24,7 @@ add_action('wp', 'schedule_tdp_daily_functions');
 
 function run_tdp_daily_functions()
 {
+    set_time_limit(3000);
     trigger_error('RUNNING TDP DAILY FUNCTIONS', E_USER_WARNING);
     update_statistics_data_for_all_gd_places();
     sleep(60);
