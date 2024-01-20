@@ -62,16 +62,6 @@ function run_tdp_daily_functions()
 }
 add_action('run_tdp_daily_functions', 'run_tdp_daily_functions');
 
-function send_email($body, $subject)
-{
-    $to = get_option('admin_email'); // Get the admin email
-
-    $headers = array('Content-Type: text/html; charset=UTF-8');
-
-    wp_mail($to, $subject, $body, $headers);
-}
-
-
 //add a admin plugin button to run the daily functions
 function add_run_tdp_daily_functions_button($links)
 {
