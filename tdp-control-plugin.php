@@ -59,7 +59,7 @@ function run_tdp_daily_functions()
 
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
-    wp_mail($to, $subject, $body, $headers);
+    wp_mail($to, $subject, "", $headers);
 }
 add_action('run_tdp_daily_functions', 'run_tdp_daily_functions');
 
