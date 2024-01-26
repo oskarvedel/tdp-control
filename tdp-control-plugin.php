@@ -110,7 +110,7 @@ function tdp_4_times_per_day_functions()
 {
     set_time_limit(3000);
     trigger_error('RUNNING TDP 4 TIMES PER DAY FUNCTIONS', E_USER_WARNING);
-    import_boxdepotet_scraper_data();
+    import_scraper_data("boxdepotet");
     sleep(60);
     generate_default_unit_list_for_all_gd_places();
     sleep(30);
