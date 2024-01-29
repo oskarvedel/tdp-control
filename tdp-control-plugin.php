@@ -32,7 +32,7 @@ function tdp_daily_functions()
     sleep(60);
     consolidate_geolocations();
     sleep(60);
-    import_boxdepotet_scraper_data();
+    import_scraper_data("boxdepotet");
     sleep(60);
     generate_seo_texts();
     sleep(30);
