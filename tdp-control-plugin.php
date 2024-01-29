@@ -138,7 +138,7 @@ add_filter('plugin_action_links_tdp-control/tdp-control-plugin.php', 'add_run_td
 
 function handle_run_tdp_4_times_per_day_functions()
 {
-    run_tdp_4_times_per_day_functions();
+    tdp_4_times_per_day_functions();
     wp_redirect(admin_url('plugins.php?s=tdp&plugin_status=all'));
     exit;
 }
