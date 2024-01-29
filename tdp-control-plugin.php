@@ -55,11 +55,7 @@ function tdp_daily_functions()
 
     //send an email to the admin
     $subject = "TDP Daily Functions just ran";
-    $to = get_option('admin_email'); // Get the admin email
-
-    $headers = array('Content-Type: text/html; charset=UTF-8');
-
-    wp_mail($to, $subject, "", $headers);
+    send_email($emailoutput, $subject);
 }
 add_action('run_tdp_daily_functions', 'tdp_daily_functions');
 
@@ -118,11 +114,8 @@ function tdp_4_times_per_day_functions()
 
     //send an email to the admin
     $subject = "TDP 4 Times Per Day Functions just ran";
-    $to = get_option('admin_email'); // Get the admin email
 
-    $headers = array('Content-Type: text/html; charset=UTF-8');
-
-    wp_mail($to, $subject, "", $headers);
+    send_email($emailoutput, $subject);
 }
 
 add_action('run_tdp_4_times_per_day_functions', 'tdp_4_times_per_day_functions');
