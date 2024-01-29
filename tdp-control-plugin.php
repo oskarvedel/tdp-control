@@ -55,7 +55,7 @@ function tdp_daily_functions()
 
     //send an email to the admin
     $subject = "TDP Daily Functions just ran";
-    send_email("body", $subject);
+    email_admin("body", $subject);
 }
 add_action('run_tdp_daily_functions', 'tdp_daily_functions');
 
@@ -115,7 +115,7 @@ function tdp_4_times_per_day_functions()
     //send an email to the admin
     $subject = "TDP 4 Times Per Day Functions just ran";
 
-    send_email("body", $subject);
+    email_admin("body", $subject);
 }
 
 add_action('run_tdp_4_times_per_day_functions', 'tdp_4_times_per_day_functions');
