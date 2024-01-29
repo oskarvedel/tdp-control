@@ -111,11 +111,6 @@ function tdp_4_times_per_day_functions()
     generate_default_unit_list_for_all_gd_places();
     sleep(30);
     trigger_error('FINISHED RUNNING TDP 4 TIMES PER DAY FUNCTIONS', E_USER_WARNING);
-
-    //send an email to the admin
-    $subject = "TDP 4 Times Per Day Functions just ran";
-
-    email_admin("body", $subject);
 }
 
 add_action('run_tdp_4_times_per_day_functions', 'tdp_4_times_per_day_functions');
