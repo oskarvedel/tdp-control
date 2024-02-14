@@ -52,10 +52,6 @@ function tdp_daily_functions()
     sleep(30);
     generate_missing_chatgpt_geolocation_short_descriptions(50);
     trigger_error('FINISHED RUNNING TDP DAILY FUNCTIONS', E_USER_WARNING);
-
-    //send an email to the admin
-    $subject = "TDP Daily Functions just ran";
-    email_admin("body", $subject);
 }
 add_action('run_tdp_daily_functions', 'tdp_daily_functions');
 
