@@ -127,3 +127,35 @@ function handle_run_tdp_4_times_per_day_functions()
     exit;
 }
 add_action('admin_post_run_tdp_4_times_per_day_functions', 'handle_run_tdp_4_times_per_day_functions');
+
+
+// Add a new cron schedule for every 10 minutes
+function add_every_ten_minutes_schedule($schedules)
+{
+    $schedules['every_ten_minutes'] = array(
+        'interval' => 10 * 60, // 10 minutes in seconds
+        'display'  => __('Every 10 minutes'),
+    );
+    return $schedules;
+}
+add_filter('cron_schedules', 'add_every_ten_minutes_schedule');
+
+// Schedule an event that runs every 10 minutes
+function schedule_tdp_every_ten_minutes_functions()
+{
+    if (!wp_next_scheduled('run_tdp_every_ten_minutes_functions')) {
+        $time = time(); // Set the current time
+        wp_schedule_event($time, 'every_ten_minutes', 'run_tdp_every_ten_minutes_functions');
+    }
+}
+add_action('wp', 'schedule_tdp_every_ten_minutes_functions');
+
+
+function tdp_every_ten_minutes_functions()
+{
+    trigger_error('RUNNING TDP EVERY TEN MINUTES FUNCTIONS', E_USER_WARNING);
+    send_missing_supplier_booking_emails();
+    send_missing_admin_booking_emails();
+}
+
+add_action('run_tdp_every_ten_minutes_functions', 'tdp_every_ten_minutes_functions');
