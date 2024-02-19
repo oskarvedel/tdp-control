@@ -153,7 +153,7 @@ add_action('wp', 'schedule_tdp_every_ten_minutes_functions');
 
 function tdp_every_ten_minutes_functions()
 {
-    // trigger_error('RUNNING TDP EVERY TEN MINUTES FUNCTIONS', E_USER_WARNING);
+    trigger_error('RUNNING TDP EVERY TEN MINUTES FUNCTIONS', E_USER_WARNING);
     send_missing_supplier_booking_emails();
     send_missing_admin_booking_emails();
 }
