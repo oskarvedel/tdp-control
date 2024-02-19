@@ -24,7 +24,7 @@ add_action('wp', 'schedule_tdp_daily_functions');
 
 function tdp_daily_functions()
 {
-    set_time_limit(3000);
+    set_time_limit(5000);
     trigger_error('RUNNING TDP DAILY FUNCTIONS', E_USER_WARNING);
     update_statistics_data_for_all_gd_places();
     sleep(60);
@@ -100,7 +100,7 @@ add_action('wp', 'schedule_tdp_4_times_per_day_functions');
 
 function tdp_4_times_per_day_functions()
 {
-    set_time_limit(3000);
+    set_time_limit(5000);
     trigger_error('RUNNING TDP 4 TIMES PER DAY FUNCTIONS', E_USER_WARNING);
     import_scraper_data("boxdepotet");
     sleep(60);
@@ -153,7 +153,7 @@ add_action('wp', 'schedule_tdp_every_ten_minutes_functions');
 
 function tdp_every_ten_minutes_functions()
 {
-    trigger_error('RUNNING TDP EVERY TEN MINUTES FUNCTIONS', E_USER_WARNING);
+    // trigger_error('RUNNING TDP EVERY TEN MINUTES FUNCTIONS', E_USER_WARNING);
     send_missing_supplier_booking_emails();
     send_missing_admin_booking_emails();
 }
