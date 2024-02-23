@@ -46,7 +46,7 @@ function tdp_daily_functions()
     sleep(30);
     generate_meta_descriptions();
     sleep(30);
-    generate_default_unit_list_for_all_gd_places();
+    generate_archive_item_html_for_all_gd_places();
     sleep(30);
     generate_missing_chatgpt_geolocation_descriptions(50);
     sleep(30);
@@ -104,8 +104,11 @@ function tdp_4_times_per_day_functions()
     trigger_error('RUNNING TDP 4 TIMES PER DAY FUNCTIONS', E_USER_WARNING);
     import_scraper_data("boxdepotet");
     sleep(60);
-    generate_default_unit_list_for_all_gd_places();
+    generate_archive_item_html_for_all_gd_places();
     sleep(30);
+    consolidate_geolocations();
+    sleep(30);
+    generate_nearby_locations_lists();
     trigger_error('FINISHED RUNNING TDP 4 TIMES PER DAY FUNCTIONS', E_USER_WARNING);
 }
 
